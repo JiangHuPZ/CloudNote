@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+{% if request.session.username %}
+<p>
+    welcome {{ request.session.username }}
+</p>
+<p>
+    <a href="/user/logout">logout</a>
+</p>
+<p>
+    <a href="/note/all">Go to My CloudNote</a>
+</p>
+
+{% else %}
+    {% if request.COOKIES.username %}
+    <p>
+        welcome {{ request.COOKIES.username }}
+    </p>
+    <p>
+        <a href="/user/logout">logout</a>
+    </p>
+    <p>
+        <a href="/note/all">Go to My CloudNote</a>
+    </p>
+    {% else %}
+    <p>
+        <a href="/user/login">login</a>
+    </p>
+    <p>
+        <a href="/user/reg">register</a>
+    </p>
+    {% endif %}
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th>noteId</th>
+        <th>title</th>
+        <th>content</th>
+        <th>createdTime</th>
+        <th>updatedTime</th>
+    </tr>
+    {% for note in notes %}
+    <tr>
+        <td>{{ note.id }}</td>
+        <td>{{ note.title }}</td>
+        <td>{{ note.content }}</td>
+        <td>{{ note.created_time }}</td>
+        <td>{{ note.updated_time }}</td>
+        <td>
+            <a href="/note/update/{{ note.id }}">update</a>
+            <a href="/note/delete?note_id={{ note.id }}">delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<p>
+    <a href="/note/add" >add note</a>
+</p>
+
+</body>
+</html>

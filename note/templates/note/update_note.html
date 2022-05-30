@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<form action="/note/update/{{ note.id }}" method="post">
+
+    <p>
+        title: <input type="text" value="{{ note.title }}" name="title"> <input type="submit" value="save">
+
+    </p>
+    <p>
+        <textarea cols="30" rows="10" name="content"></textarea>
+    </p>
+
+</form>
+</body>
+</html>
